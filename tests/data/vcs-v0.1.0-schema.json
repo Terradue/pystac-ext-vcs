@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://stac-extensions.github.io/vcs/v0.1.0/schema.json",
+  "title": "VCS Extension",
+  "description": "STAC VCS Extension for STAC Catalogs, STAC Collections and STAC Items.",
+  "type": "object",
+  "required": [
+    "stac_extensions",
+    "type"
+  ],
+  "properties": {
+    "stac_extensions": {
+      "type": "array",
+      "contains": {
+        "const": "https://stac-extensions.github.io/vcs/v0.1.0/schema.json"
+      }
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Catalog",
+        "Collection",
+        "Feature"
+      ]
+    },
+    "assets": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/fields"
+      }
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/fields"
+      }
+    },
+    "linkTemplates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/fields"
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "type": "object",
+      "required": ["type", "properties"],
+      "properties": {
+        "type": {
+          "const": "Feature"
+        },
+        "properties": {
+          "$ref": "#/definitions/fields"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "const": "Collection"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/fields"
+        }
+      ]
+    },
+    {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "const": "Catalog"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/fields"
+        }
+      ]
+    }
+  ],
+  "definitions": {
+    "fields": {
+      "type": "object",
+      "properties": {
+        "vcs:type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "vcs:branch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "vcs:revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "vcs:tag": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "patternProperties": {
+        "^(?!vcs:)": {}
+      },
+      "additionalProperties": false
+    }
+  }
+}
