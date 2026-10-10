@@ -27,7 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Initial project release.
+- Initial project release of the VCS Extension Specification [v0.1.0](https://github.com/stac-extensions/vcs/tree/v0.1.0).
 
 [Unreleased]: https://github.com/Terradue/pystac-ext-vcs/compare/1.1.0...HEAD
 [0.1.0]: https://github.com/Terradue/pystac-ext-vcs/releases/tag/0.1.0
