@@ -43,7 +43,7 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dependencies = [
-  "pystac>=1,<2"
+  "pystac>=1.15.2,<2"
 ]
 
 # ---------------------------------------------------------------------------
@@ -116,7 +116,7 @@ exclude_lines = [
 [tool.hatch.envs.test]
 skip-install = false
 dependencies = [
-  "pystac[validation]>=1,<2",
+  "pystac[validation]>=1.15.2,<2",
   "pytest>=9.1.1,<10",
   "pytest-cov>=7.1.0,<8",
 ]
@@ -160,7 +160,7 @@ dependencies = [
   "types-shapely>=2.1.0.20260728",
   "ruff>=0.16.9",
   "bandit>=1.9.4",
-  "pystac[validation]>=1,<2",
+  "pystac[validation]>=1.15.2,<2",
   "pytest>=9.1.1,<10",
 ]
 
@@ -319,7 +319,7 @@ check = [
 # Preserve editable-install test extras and uv's local wheel resolution.
 [project.optional-dependencies]
 test = [
-  "pystac[validation]>=1,<2",
+  "pystac[validation]>=1.15.2,<2",
   "pytest>=9.1.1,<10",
   "pytest-cov>=7.1.0,<8"
 ]
