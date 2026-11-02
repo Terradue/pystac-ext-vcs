@@ -117,7 +117,7 @@ exclude_lines = [
 skip-install = false
 dependencies = [
   "pystac[validation]>=1,<2",
-  "pytest>=9.1.1,<10",
+  "pytest>=9.2.0,<10",
   "pytest-cov>=7.1.0,<8",
 ]
 
@@ -161,7 +161,7 @@ dependencies = [
   "ruff>=0.16.9",
   "bandit>=1.9.4",
   "pystac[validation]>=1,<2",
-  "pytest>=9.1.1,<10",
+  "pytest>=9.2.0,<10",
 ]
 
 # ---------------------------------------------------------------------------
@@ -320,6 +320,6 @@ check = [
 [project.optional-dependencies]
 test = [
   "pystac[validation]>=1,<2",
-  "pytest>=9.1.1,<10",
+  "pytest>=9.2.0,<10",
   "pytest-cov>=7.1.0,<8"
 ]
